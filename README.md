@@ -1,6 +1,6 @@
 # luge_Kartenspiel
 
-Remote Lügespiel von Niklas und Tobi
+Remote Lügespiel von Niklas und Tobi und Franca und Mia und Manu und Ceci
 
 Installation:
 
@@ -43,7 +43,9 @@ Spieler:
 
 - Programm starten:
   In Miniconda den Befehl:
-  python luge_client.py
+
+      python luge_client.py
+
   eingeben.
 
 Tasten:
@@ -68,6 +70,8 @@ Server: (nicht vollständig ausgetestet)
 
 - Als Admin Ausführen
   In Linux:
-  sudo luge_sever.py
+
+      sudo luge_sever.py
+
   In Windows:
   keine Ahnung

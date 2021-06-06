@@ -6,7 +6,7 @@ import numpy as np
 anzahl_spieler = 2
 
 # Einrichten der Verbindung
-host="25.71.80.22"
+host="25.86.38.161"
 port = 443
 print(host, ":", port)
 
@@ -31,7 +31,7 @@ def Zahlprufen(input):
         return True
     except ValueError:
         return False
-    
+
 def check_for_four(my_cards):
     Handkarten = [[] for i in range(len(Zahlen))]
     for i in range(len(my_cards)):
@@ -58,8 +58,8 @@ if __name__ == '__main__':
                 print(str(data))
                 my_cards = check_for_four(my_cards)
                 print_cards(my_cards)
-                
-               
+
+
                 while True:
                     message = input(" -> ")
                     if Zahlprufen(message) == True:
@@ -68,11 +68,11 @@ if __name__ == '__main__':
                         client_socket.send(karte.encode())
                         my_cards.pop(int(message))
                         print_cards(my_cards)
-                        
-                    elif (message == "a"):  
+
+                    elif (message == "a"):
                         client_socket.send(message.encode())
                         break
-                   
+
                     elif (message == "l"):
                         client_socket.send(message.encode())
                         break
@@ -86,7 +86,7 @@ if __name__ == '__main__':
                 if len(data) >= 2:
                     my_cards.append(int(data[1]))
 
-           
+
             elif "Um welche Zahl wird gespielt?" in str(data):
                 print_cards(my_cards)
                 while True:
@@ -97,14 +97,14 @@ if __name__ == '__main__':
                         break
                     else:
                         print("Das hat nicht geklappt, bitte versuche es nochmal...")
-            
+
             elif data.endswith(" Karten erhalten."):
                 my_cards = np.sort(my_cards).tolist()
                 print (data)
-            
+
             elif data != "":
                 print('Server: ' + data)  # show in terminal
-   
+
     except KeyboardInterrupt:
         print("Bis bald!\n")
         client_socket.close()
